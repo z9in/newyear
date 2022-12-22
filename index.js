@@ -57,7 +57,7 @@ app.post('/content/:id', (req,res)=>{
 
 
 
-app.listen(3001,(req,res)=>{
+app.listen(3005,(req,res)=>{
     console.log('3001번 서버열림');
 })
 
