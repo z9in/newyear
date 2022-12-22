@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pc_style.css" media="screen and (min-width:400px)">
+    <link rel="stylesheet" href="mobile_style.css" media="screen and (max-width:400px)">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <h1>근하신년</h1>
+            <p>희망찬 새해 <br> 행운이 가득하시기 바랍니다.</p>
+        </div> <!--title-->
+        <div class="hello">
+            <h2>새해에는 항상 건강하시고 <br> 좋은 일 가득하시길 기원합니다.</h2>
+            <div class="img_box"></div>
+            <p>
+                다사다난했던 지난 해 <br>
+                무거운 짐들은 다 털어내시고 <br>
+                새로운 희망, 새로운 마음으로 <br>
+                새해 힘차게 출발하시기 바랍니다. <br>
+                새해 복 많이 받으세요.</p>
+            <h3>권동환 드림</h3>
+        </div> <!--hello-->
+        <div class="say">
+            <h2>덕담 한마디</h2>
+            <form class="write_box" action="/saying" method="post">
+                <label for="write"></label>
+                <textarea type="text" id="write" name="write" placeholder="여기에 글을 작성해 주세요(최대 255자)"></textarea>
+                <div class="textLength">
+                    <p>0/255</p>
+                </div>
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="작성자명">
+                <label for="pwd"></label>
+                <input type="password" id="pwd" name="pwd" placeholder="비밀번호">
+                <input type="submit" id="submit" value="글쓰기">
+            </form>
+            <div class="reply_box">
+                <%for(i=contents.length-1; i>=0; i--) {%>
+                    <form class="reply" action="/content/<%=i%>" method="post">
+                        <label for="text">
+                            <h5><%=pwds[i].names%></h5>
+                            <input type="password" id="repwd" name="repwd" placeholder="삭제시 비밀번호 입력">
+                            <p><%=pwds[i].dates%></p>
+                            <h4><%=contents[i]%></h4>
+                        </label>
+                        <input type="submit" id="clear">
+                    </form>
+                    <%}%>
+            </div>
+            
+           
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
