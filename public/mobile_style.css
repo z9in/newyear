@@ -136,7 +136,7 @@ body {
 }
 .say #name {
     margin-top: 10px;
-    width: 30%;
+    width: 50%;
     height: 30px;
     border-radius: 5px;
     border: 2px solid #ccc;
@@ -144,7 +144,7 @@ body {
 }
 .say #pwd {
     margin-top: 10px;
-    width: 30%;
+    width: 50%;
     height: 30px;
     border-radius: 5px;
     border: 2px solid #ccc;
@@ -152,7 +152,7 @@ body {
 }
 .say #submit {
     margin-top: 10px;
-    width: 30%;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     border: 2px solid #ccc;
