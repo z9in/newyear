@@ -23,3 +23,20 @@ textEl.addEventListener('keyup', ()=>{
         textLengEl.innerHTML=`<p>${leng}/255</p>`
     }
 })
+
+let visualEl = document.querySelectorAll('.visual');
+let clearEl = document.querySelectorAll('.clear');
+let repwdEl = document.querySelectorAll('.repwd');
+let clearElArr = [...clearEl];
+let repwdElArr = [...repwdEl];
+clearElArr.reverse();
+repwdElArr.reverse()
+
+visualEl.forEach(e=>{
+    e.addEventListener('click',i=>{
+        let num = i.target.id; 
+        i.target.style.display='none';
+        clearElArr[num].style.display='block';
+        repwdElArr[num].style.visibility= 'visible';
+    })
+})
