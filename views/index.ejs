@@ -34,7 +34,7 @@
             <h2>덕담 한마디</h2>
             <form class="write_box" action="/saying" method="post">
                 <label for="write"></label>
-                <textarea type="text" id="write" name="write" placeholder="여기에 글을 작성해 주세요(최대 255자)"></textarea>
+                <textarea type="text" id="write" name="write" rows="5" cols="10" maxlength="255" placeholder="여기에 글을 작성해 주세요(최대 255자)"></textarea>
                 <div class="textLength">
                     <p>0/255</p>
                 </div>
@@ -49,11 +49,12 @@
                     <form class="reply" action="/content/<%=i%>" method="post">
                         <label for="text">
                             <h5><%=pwds[i].names%></h5>
-                            <input type="password" id="repwd" name="repwd" placeholder="삭제시 비밀번호 입력">
+                            <input type="password" id="repwd" name="repwd" class="repwd" placeholder="삭제시 비밀번호 입력">
                             <p><%=pwds[i].dates%></p>
-                            <h4><%=contents[i]%></h4>
+                            
                         </label>
-                        <input type="submit" id="clear">
+                        <input type="submit" id="clear" class="clear">
+                        <h1 class="conten"><%=contents[i]%></h1>
                     </form>
                     <%}%>
             </div>

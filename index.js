@@ -24,17 +24,22 @@ app.post('/saying', (req,res)=>{
     let name = req.body.name;
     let pwd = req.body.pwd;
     let date = moment().format('yyyy.MM.DD.');
-    console.log(content, name, pwd, date);
-    pwds.push({
-        names : name,
-        dates : date,
-        pwds : pwd
-    });
-    contents.push(content)
-    console.log(pwds);
-    fs.writeFileSync('./DB/content.json', JSON.stringify(contents));
-    fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
-    res.redirect('/')
+    console.log(content, name, Boolean(pwd), date);
+    if(Boolean(pwd)==false || Boolean(name)==false) {
+        res.send("<script>alert('작성자명 또는 비밀번호가 입력되지 않았습니다.'); window.location.replace('/');</script>")
+    } else{
+        pwds.push({
+            names : name,
+            dates : date,
+            pwds : pwd
+        });
+        contents.push(content)
+        console.log(pwds);
+        fs.writeFileSync('./DB/content.json', JSON.stringify(contents));
+        fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
+        res.redirect('/')
+    }
+    
 })
 
 app.post('/content/:id', (req,res)=>{
