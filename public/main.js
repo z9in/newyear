@@ -32,11 +32,30 @@ let repwdElArr = [...repwdEl];
 clearElArr.reverse();
 repwdElArr.reverse()
 
+// visualEl.forEach(e=>{
+   // e.addEventListener('click',i=>{
+     //   let num = i.target.id; 
+       // i.target.style.display='none';
+       // clearElArr[num].style.display='block';
+       // repwdElArr[num].style.visibility= 'visible';
+ //   })
+// })
+
 visualEl.forEach(e=>{
     e.addEventListener('click',i=>{
-        let num = i.target.id; 
-        i.target.style.display='none';
-        clearElArr[num].style.display='block';
-        repwdElArr[num].style.visibility= 'visible';
+        let num = i.target.id;
+        let repwd=prompt('비밀번호',);
+        console.log(repwd);
+        let fo = document.createElement('form');
+        let inp = document.createElement('input');
+        inp.setAttribute('type', 'hidden');
+        inp.setAttribute('name', 'repwd');
+        inp.setAttribute('value', repwd);
+        fo.appendChild(inp);
+        fo.setAttribute('method', 'post');
+        fo.setAttribute('action', `/content/${num}`);
+        document.body.appendChild(fo);
+        fo.submit();
+
     })
 })
