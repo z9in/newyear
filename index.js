@@ -24,7 +24,6 @@ app.post('/saying', (req,res)=>{
     let name = req.body.name;
     let pwd = req.body.pwd;
     let date = moment().format('yyyy.MM.DD.');
-    console.log(content, name, Boolean(pwd), date);
     if(Boolean(pwd)==false || Boolean(name)==false) {
         res.send("<script>alert('작성자명 또는 비밀번호가 입력되지 않았습니다.'); window.location.replace('/');</script>")
     } else{
@@ -46,7 +45,6 @@ app.post('/content/:id', (req,res)=>{
     let id = req.params.id;
     let repwd = req.body.repwd;
     let q = pwds[id].pwds;
-    console.log(id, repwd, q)
     if(q==repwd){
         contents.splice(id,1);
         pwds.splice(id,1);
