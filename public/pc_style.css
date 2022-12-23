@@ -195,7 +195,7 @@ body {
     line-height: 13px;
     padding-left: 10px;
 }
-.say .reply #repwd {
+.say .reply .repwd {
     width: 50%;
     height: 20px;
     font-size: 10px;
@@ -225,7 +225,7 @@ body {
     word-wrap: break-word;
     /* outline: 1px solid red; */
 }
-.say .reply #clear {
+.say .reply .clear {
     width: 25px;
     height: 25px;
     color: transparent;
