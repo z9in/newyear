@@ -10,8 +10,13 @@ let repwdEl = document.querySelectorAll('.repwd');
 let clearElArr = [...clearEl];
 let repwdElArr = [...repwdEl];
 clearElArr.reverse();
-repwdElArr.reverse()
+repwdElArr.reverse();
+let formEl = document.querySelectorAll('.reply');
+let formElArr = [...formEl];
+formElArr.reverse();
 let num=0;
+
+
 setInterval(function(){
     num++
     imgEl.setAttribute('style', `opacity:0;`)
@@ -69,9 +74,7 @@ countEl.innerHTML=`댓글: ${formElArr.length}`;
 
 //fetch로 비밀번호 확인 후 자바스크립트에서 구현
 
-// let formEl = document.querySelectorAll('.reply');
-// let formElArr = [...formEl];
-// formElArr.reverse();
+
 
 // visualEl.forEach(e=>{
    // e.addEventListener('click',i=>{
