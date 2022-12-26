@@ -62,6 +62,10 @@ repwdElArr.reverse()
     // })
 // })
 
+let formEl = document.querySelectorAll('.reply');
+let formElArr = [...formEl];
+formElArr.reverse();
+
 visualEl.forEach(e=>{
     e.addEventListener('click',i=>{
         let num = i.target.id;
