@@ -1,6 +1,16 @@
 //main.js
 
 const imgEl = document.getElementsByClassName('img_box')[0];
+const countEl = document.getElementsByClassName('count')[0];
+const textEl = document.getElementById('write');
+const textLengEl = document.getElementsByClassName('textLength')[0];
+let visualEl = document.querySelectorAll('.visual');
+let clearEl = document.querySelectorAll('.clear');
+let repwdEl = document.querySelectorAll('.repwd');
+let clearElArr = [...clearEl];
+let repwdElArr = [...repwdEl];
+clearElArr.reverse();
+repwdElArr.reverse()
 let num=0;
 setInterval(function(){
     num++
@@ -9,8 +19,7 @@ setInterval(function(){
 
 },5000);
 
-const textEl = document.getElementById('write');
-const textLengEl = document.getElementsByClassName('textLength')[0];
+
 
 textEl.addEventListener('keyup', ()=>{
     let leng = textEl.value.length    
@@ -24,13 +33,9 @@ textEl.addEventListener('keyup', ()=>{
     }
 })
 
-let visualEl = document.querySelectorAll('.visual');
-let clearEl = document.querySelectorAll('.clear');
-let repwdEl = document.querySelectorAll('.repwd');
-let clearElArr = [...clearEl];
-let repwdElArr = [...repwdEl];
-clearElArr.reverse();
-repwdElArr.reverse()
+countEl.innerHTML=`댓글: ${formElArr.length}`;
+
+
 
  visualEl.forEach(e=>{
     e.addEventListener('click',i=>{
