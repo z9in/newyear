@@ -167,6 +167,13 @@ body {
     margin-bottom: 20px;
     overflow: scroll;
 }
+.say .reply_box .count {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px;
+    border-bottom: 1px solid #ccc ;
+}
 .say .reply {
     width: 100%;
     /* height: 30%; */
