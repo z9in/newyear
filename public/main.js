@@ -41,21 +41,38 @@ repwdElArr.reverse()
  //   })
 // })
 
+// form(hidden) 생성 활용
+
+// visualEl.forEach(e=>{
+   // e.addEventListener('click',i=>{
+     //   let num = i.target.id;
+     //   let repwd=prompt('비밀번호',);
+     //   console.log(repwd);
+     //   let fo = document.createElement('form');
+     //   let inp = document.createElement('input');
+     //   inp.setAttribute('type', 'hidden');
+     //   inp.setAttribute('name', 'repwd');
+     //   inp.setAttribute('value', repwd);
+     //   fo.appendChild(inp);
+     //   fo.setAttribute('method', 'post');
+     //   fo.setAttribute('action', `/content/${num}`);
+     //   document.body.appendChild(fo);
+     //   fo.submit();
+
+    // })
+// })
+
 visualEl.forEach(e=>{
     e.addEventListener('click',i=>{
         let num = i.target.id;
         let repwd=prompt('비밀번호',);
-        console.log(repwd);
-        let fo = document.createElement('form');
-        let inp = document.createElement('input');
-        inp.setAttribute('type', 'hidden');
-        inp.setAttribute('name', 'repwd');
-        inp.setAttribute('value', repwd);
-        fo.appendChild(inp);
-        fo.setAttribute('method', 'post');
-        fo.setAttribute('action', `/content/${num}`);
-        document.body.appendChild(fo);
-        fo.submit();
+        fetch(`/remove/${num}`, {method : 'post'}).then((res)=>res.json()).then((data)=>{  
+           if(data.pwds == repwd) {
+            formElArr[num].submit();
+           }else {
+            alert('비밀번호가 틀립니다.'); window.location.replace('/');
+           }
+        });
 
     })
 })
