@@ -32,16 +32,16 @@ let repwdElArr = [...repwdEl];
 clearElArr.reverse();
 repwdElArr.reverse()
 
-// visualEl.forEach(e=>{
-   // e.addEventListener('click',i=>{
-     //   let num = i.target.id; 
-       // i.target.style.display='none';
-       // clearElArr[num].style.display='block';
-       // repwdElArr[num].style.visibility= 'visible';
- //   })
-// })
+ visualEl.forEach(e=>{
+    e.addEventListener('click',i=>{
+        let num = i.target.id; 
+        i.target.style.display='none';
+        clearElArr[num].style.display='block';
+        repwdElArr[num].style.visibility= 'visible';
+    })
+ })
 
-// form(hidden) 생성 활용
+// 자바스크립트에서 form(hidden) 생성 후 비밀번호 제출
 
 // visualEl.forEach(e=>{
    // e.addEventListener('click',i=>{
@@ -62,21 +62,23 @@ repwdElArr.reverse()
     // })
 // })
 
-let formEl = document.querySelectorAll('.reply');
-let formElArr = [...formEl];
-formElArr.reverse();
+//fetch로 비밀번호 확인 후 자바스크립트에서 구현
 
-visualEl.forEach(e=>{
-    e.addEventListener('click',i=>{
-        let num = i.target.id;
-        let repwd=prompt('비밀번호',);
-        fetch(`/remove/${num}`, {method : 'post'}).then((res)=>res.json()).then((data)=>{  
-           if(data.pwds == repwd) {
-            formElArr[num].submit();
-           }else {
-            alert('비밀번호가 틀립니다.'); window.location.replace('/');
-           }
-        });
+// let formEl = document.querySelectorAll('.reply');
+// let formElArr = [...formEl];
+// formElArr.reverse();
 
-    })
-})
+// visualEl.forEach(e=>{
+   // e.addEventListener('click',i=>{
+     //   let num = i.target.id;
+       // let repwd=prompt('비밀번호',);
+      //  fetch(`/remove/${num}`, {method : 'post'}).then((res)=>res.json()).then((data)=>{  
+        //   if(data.pwds == repwd) {
+        //    formElArr[num].submit();
+        //   }else {
+        //    alert('비밀번호가 틀립니다.'); window.location.replace('/');
+        //   }
+      //  });
+
+  //  })
+// })
