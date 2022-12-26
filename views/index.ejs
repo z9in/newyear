@@ -45,6 +45,7 @@
                 <input type="submit" id="submit" value="글쓰기">
             </form>
             <div class="reply_box">
+                <h1 class="count">댓글 </h1>
                 <%for(i=contents.length-1; i>=0; i--) {%>
                     <form class="reply" action="/content/<%=i%>" method="post">
                         <label for="text">
