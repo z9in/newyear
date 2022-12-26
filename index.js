@@ -41,36 +41,39 @@ app.post('/saying', (req,res)=>{
     
 })
 
-// app.post('/content/:id', (req,res)=>{
-   // let id = req.params.id;
-   // let repwd = req.body.repwd;
-   // let q = pwds[id].pwds;
-   // if(q==repwd){
-   //     contents.splice(id,1);
-   //     pwds.splice(id,1);
-   //     fs.writeFileSync('./DB/content.json',JSON.stringify(contents));
-   //     fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
-   //     res.redirect('/');
-   // }else {
-   //     res.send("<script>alert('비밀번호가 틀립니다.'); window.location.replace('/');</script>")
-   // }
+ app.post('/content/:id', (req,res)=>{
+    let id = req.params.id;
+    let repwd = req.body.repwd;
+    let q = pwds[id].pwds;
+    if(q==repwd){
+        contents.splice(id,1);
+        pwds.splice(id,1);
+        fs.writeFileSync('./DB/content.json',JSON.stringify(contents));
+        fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
+        res.redirect('/');
+    }else {
+        res.send("<script>alert('비밀번호가 틀립니다.'); window.location.replace('/');</script>")
+    }
 
+ })
+
+
+//fetch 후 자바스크립트에서 비밀번호 확인 구현
+
+//app.post('/remove/:id', (req,res)=>{
+  //  let id = req.params.id;
+  //  res.json(pwds[id]);
 // })
 
-app.post('/remove/:id', (req,res)=>{
-    let id = req.params.id;
-    res.json(pwds[id]);
-})
-
-app.post('/content/:id', (req,res)=>{
-    let id = req.params.id;
-    console.log(id);
-         contents.splice(id,1);
-         pwds.splice(id,1);
-         fs.writeFileSync('./DB/content.json',JSON.stringify(contents));
-         fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
-         res.redirect('/');
-});
+// app.post('/content/:id', (req,res)=>{
+   // let id = req.params.id;
+   // console.log(id);
+     //    contents.splice(id,1);
+     //    pwds.splice(id,1);
+     //    fs.writeFileSync('./DB/content.json',JSON.stringify(contents));
+     //    fs.writeFileSync('./DB/pwds.json',JSON.stringify(pwds));
+     //    res.redirect('/');
+// });
 
 
 
